@@ -32,4 +32,21 @@ def caesar_cipher(text, shift)
   resultArray.join('')
 end
 
-puts caesar_cipher("What a string!", 5)
+
+keepGoing = true
+while keepGoing
+  puts "What's your text to encode?"
+  textToEncode = gets.chomp
+  puts "What is your key?"
+  key = gets.chomp.to_i
+  encodedText = caesar_cipher(textToEncode, key)
+  puts ''
+  puts "Encoded text: #{encodedText}"
+  puts "Do you want to keep going? Enter q to quit."
+  input = gets.chomp
+  if input == 'q'
+    keepGoing = false
+  else
+    puts '---------------------------'
+  end
+end
